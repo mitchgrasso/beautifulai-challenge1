@@ -40,3 +40,8 @@ Your project should look something like this if there are 3 SimpleBoxes added to
 ## Bonus Tasks
 - Utilize the existing animation code so that all the SimpleBoxes animate into their new layout whenever a new SimpleBox is added.
 - Extend your class to render a delete button within each child SimpleBox that will remove that SimpleBox from your container element when clicked (hint: you may need to modify the existing classes to implement this behavior)
+
+## Submitting Your Work
+Please clone this repo and check it into your own github account. Send an email to jobs@beautiful.ai with a link to the repository and your resume or portfolio links.
+
+Thanks! And Good Luck!
