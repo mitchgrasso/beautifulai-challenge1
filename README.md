@@ -33,7 +33,7 @@ Your project should look something like this if there are 3 SimpleBoxes added to
 ![Example](/example.png)
 
 ## Project Constraints
-- Build your project from the existing classes using vanilla ES6 javascript. Do not add additional 3rd-party javascript libraries.
+- Build your project from the existing classes using vanilla ES6 javascript and jQuery. Do not add additional 3rd-party javascript libraries.
 - All layout and positioning should be done via javascript/jquery. Do not use stylesheets for positioning or sizing of your elements.
 - Your new container element should inherit from one of the existing classes and you should not need to modify the existing classes.
 
