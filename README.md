@@ -25,8 +25,10 @@ one or more SimpleBox child elements with the following constraints:
 - Your container element should layout it's child SimpleBoxes horizontally across it's entire width with each child SimpleBox taking
 the maximum available width within your container element evenly divided across all the child SimpleBoxes.
 - Each child SimpleBox should be 100 pixels in height and vertically centered within your container element.
-- There should be a 20 pixel gap between the edges of your container element and it's child SimpleBoxes and a 20 pixel gap between each child SimpleBox.
+- There should be a 50 pixel gap between the edges of your container element and it's child SimpleBoxes and a 20 pixel gap between each child SimpleBox.
 - Each child SimpleBox should display a number indicating it's index within your container element.
+
+- IMPORTANT: Your new container element should be a new class that inherits from one of the existing classes. You should not need to modify the existing classes.
 
 Your project should look something like this if there are 3 SimpleBoxes added to your container element.
 
@@ -35,7 +37,6 @@ Your project should look something like this if there are 3 SimpleBoxes added to
 ## Project Constraints
 - Build your project from the existing classes using vanilla ES6 javascript and jQuery. Do not add additional 3rd-party javascript libraries.
 - All layout and positioning should be done via javascript/jquery. Do not use stylesheets for positioning or sizing of your elements.
-- Your new container element should inherit from one of the existing classes and you should not need to modify the existing classes.
 
 ## Bonus Tasks
 - Utilize the existing animation code so that all the SimpleBoxes animate into their new layout whenever a new SimpleBox is added.
