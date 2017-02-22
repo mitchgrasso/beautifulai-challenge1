@@ -28,7 +28,7 @@ the maximum available width within your container element evenly divided across 
 - There should be a 50 pixel gap between the edges of your container element and it's child SimpleBoxes and a 20 pixel gap between each child SimpleBox.
 - Each child SimpleBox should display a number indicating it's index within your container element.
 
-- IMPORTANT: Your new container element should be a new class that inherits from one of the existing classes. You should not need to modify the existing classes.
+#### IMPORTANT: Your new container element should be a new class that inherits from one of the existing classes. You should not need to modify the existing classes.
 
 Your project should look something like this if there are 3 SimpleBoxes added to your container element.
 
