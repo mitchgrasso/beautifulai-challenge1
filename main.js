@@ -5,25 +5,24 @@ class App {
         this.canvas = new SlideCanvas();
         $("body").append(this.canvas.render());
 
-        this.canvas.addElement(new SimpleContainer());
+        this.canvas.addRootElement(new MyContainerElement());
+
+        this.layoutCanvas(false);
 
         $(window).on("resize", () => {
             this.layoutCanvas(false)
         });
-
-        this.layoutCanvas(false);
     }
-    
 
     layoutCanvas(animate) {
       var padding = 50;
-      var windowBounds = {
+      var canvasBounds = {
         left: padding,
         top: padding,
         width: window.innerWidth - padding * 2,
         height: window.innerHeight - padding * 2
       };
-      this.canvas.layout(windowBounds, animate);
+      this.canvas.layout(canvasBounds, animate);
     }
 }
 
@@ -35,29 +34,26 @@ class SlideCanvas {
         return this.$el;
     }
 
-    layout(bounds, animate) {
-        var padding = 50;
-        var canvasWidth = window.innerWidth - padding * 2;
-        var canvasHeight = window.innerHeight - padding * 2;
-
-        this.$el.css(bounds);
-
-        if (this.element) {
-            this.element.layout({
-                left: 0,
-                top: 0,
-                width: canvasWidth,
-                height: canvasHeight
-            }, animate);
-        }
-    }
-
-    addElement(element) {
+    addRootElement(element) {
         this.element = element;
         this.element.canvas = this;
 
         this.$el.append(element.render());
         element.renderUI();
+    }
+
+    layout(bounds, animate) {
+        this.$el.css(bounds);
+
+        if (this.element) {
+            var elementBounds = {
+              left: 0,
+              top: 0,
+              width: bounds.width,
+              height: bounds.height
+            };
+            this.element.layout(elementBounds, animate);
+        }
     }
 }
 
