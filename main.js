@@ -1,3 +1,5 @@
+// App
+
 class App {
     constructor() {
         this.canvas = new SlideCanvas();
@@ -5,12 +7,27 @@ class App {
 
         this.canvas.addElement(new SimpleContainer());
 
-        this.canvas.layout(false);
         $(window).on("resize", () => {
-            this.canvas.layout(false);
+            this.layoutCanvas(false)
         });
+
+        this.layoutCanvas(false);
+    }
+    
+
+    layoutCanvas(animate) {
+      var padding = 50;
+      var windowBounds = {
+        left: padding,
+        top: padding,
+        width: window.innerWidth - padding * 2,
+        height: window.innerHeight - padding * 2
+      };
+      this.canvas.layout(windowBounds, animate);
     }
 }
+
+// SlideCanvas
 
 class SlideCanvas {
     render() {
@@ -18,12 +35,12 @@ class SlideCanvas {
         return this.$el;
     }
 
-    layout(animate) {
+    layout(bounds, animate) {
         var padding = 50;
         var canvasWidth = window.innerWidth - padding * 2;
         var canvasHeight = window.innerHeight - padding * 2;
 
-        this.$el.css("left", padding + "px").css("top", padding + "px").width(canvasWidth).height(canvasHeight);
+        this.$el.css(bounds);
 
         if (this.element) {
             this.element.layout({
@@ -43,6 +60,8 @@ class SlideCanvas {
         element.renderUI();
     }
 }
+
+// Elements
 
 class BaseElement {
     render() {
@@ -116,5 +135,3 @@ class SimpleContainer extends BaseElement {
         element.renderUI();
     }
 }
-
-
